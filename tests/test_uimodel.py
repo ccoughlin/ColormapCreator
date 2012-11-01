@@ -38,7 +38,7 @@ class TestUIModel(unittest.TestCase):
             good_cmap_dict = json.load(fidin)
             self.assertDictEqual(good_cmap_dict, self.model.get_cmap_dict(TestUIModel.good_cmap_file))
         # Bad file
-        with open(TestUIModel.bad_cmap_file, "r'") as fidin:
+        with open(TestUIModel.bad_cmap_file, "r") as fidin:
             self.assertIsNone(self.model.get_cmap_dict(TestUIModel.bad_cmap_file))
         # Not a colormap file
         with open(__file__, "r") as fidin:
