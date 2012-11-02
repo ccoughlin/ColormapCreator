@@ -5,7 +5,7 @@ ColormapCreator is a simple tool to create custom [matplotlib](http://matplotlib
 
 How To Use
 ----------
-Fire up the user interface, start adding colors as R,G,B values between 0-1 and separated by commas (the UI starts up with a colormap so you can see how it's done).  Edit, reorder, delete colors as desired.  Two types of colormap are supported - a linear colormap creates a gradient of your colors by linearly interpolating between them, and a list simply uses your colors as-is with no interpolation.  Click the Preview button to redraw the image plot with your colormap.
+Fire up the user interface, start adding colors with the color picker dialog; reorder, delete colors as desired.  Two types of colormap are supported - a linear colormap creates a gradient of your colors by linearly interpolating between them, and a list simply uses your colors as-is with no interpolation.  Click the Preview button to redraw the image plot with your colormap.
 
 Colormaps are saved as text files in JSON format.  The easiest way to use them in your app is to write a wrapper for the standard matplotlib.cm.get_cmap() function like so:
 
@@ -67,7 +67,7 @@ def get_cmap(cmap_name, cmap_folder=colormaps_path()):
 
 Requirements
 ------------
-Python, matplotlib, wxPython, SciPy, NumPy.
+Python, matplotlib, wxPython, NumPy.
 
 Author
 ------
