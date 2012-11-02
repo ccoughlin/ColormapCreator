@@ -110,7 +110,10 @@ class UI(wx.Frame):
         """Adds the list of RGB components [R,G,B] to the list of colors.  Each component should be a floating-point
         number between 0 and 1."""
         colors_lc = self.colors_lb.GetListCtrl()
-        colors_lc.InsertStringItem(colors_lc.GetItemCount()-1, ','.join([str(el) for el in rgb_list]))
+        color_idx = colors_lc.GetFocusedItem()
+        if color_idx == -1:
+            color_idx = colors_lc.GetItemCount()-1
+        colors_lc.InsertStringItem(color_idx, ','.join([str(el) for el in rgb_list]))
 
 def main():
     app = wx.PySimpleApp()
